@@ -52,12 +52,12 @@
 
 | Requirement ID | NFR-005 |
 | -------------------- | -------------------- |
-| Description | The components shall be organized by feature |
+| Description | Source code shall be organized by feature |
 | Priority | High |
 | Acceptance Criteria | 1. Source code follows a modular folder structure <br> 2. Functions have a single responsibility <br> 3. Code follows a consistent naming convention |
 
 | Requirement ID | NFR-006 |
 | -------------------- | -------------------- |
-| Description | Appointment data shall persist after the browser page is refreshed |
+| Description | Appointment data shall persist locally in the browser |
 | Priority | High |
-| Acceptance Criteria | 1. Appointment data remains avaible after refreshing the page, closing and reopening the browse, or restarting the device |
+| Acceptance Criteria | 1. Appointment data remains avaible after refreshing the page, closing and reopening the browser, or restarting the device |
