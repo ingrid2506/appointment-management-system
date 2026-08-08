@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/src/shared/styles/base.css">
+    <title>Your Appointments</title>
+</head>
+
+<body>
+
+    <header class="header">
+        <h1 class="header__title">Your Appointments</h1>
+
+        <button type="button" class="btn">
+            New appointment
+        </button>
+    </header>
+
+    <aside class="sidebar">
+        <nav class="sidebar__navigation" aria-label="Main navigation">
+            <ul class="sidebar__menu">
+                <li class="sidebar__item">
+                    <a class="sidebar__link" href="index.html">
+                        <img
+                            class="icon"
+                            src="/src/assets/icons/event.svg"
+                            alt="Go to home page">
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </aside>
+
+    <main class="main">
+
+        <!-- JavaScript inserts appointment cards here -->
+        <section class="appointments" aria-label="Appointments"></section>
+        
+    </main>
+
+    <!-- Global modal -->
+    <dialog id="modal"></dialog>
+
+    <!-- Global toast container -->
+    <div class="toast-container" aria-live="polite"></div>
+
+    <!-- ===================== -->
+    <!-- Appointment Card -->
+    <!-- ===================== -->
+
+    <template id="appointment-card-template">
+
+        <article class="appointment-card">
+
+            <header class="appointment-card__header">
+                <img
+                    class="icon"
+                    src="/src/assets/icons/event.svg"
+                    alt="Calendar">
+
+                <h2 class="appointment-card__title"></h2>
+            </header>
+
+            <div class="appointment-card__body">
+                <p class="appointment-card__date"></p>
+                <p class="appointment-card__time"></p>
+            </div>
+
+        </article>
+
+    </template>
+
+    <!-- ===================== -->
+    <!-- Appointment Form -->
+    <!-- ===================== -->
+
+    <template id="appointment-form-template">
+
+        <div class="modal">
+
+            <header class="modal__header">
+
+                <h2 class="modal__title"></h2>
+
+                <button
+                    type="button"
+                    class="btn modal__close">
+
+                    <img
+                        class="icon"
+                        src="/src/assets/icons/close.svg"
+                        alt="Close modal">
+
+                </button>
+
+            </header>
+
+            <div class="modal__body">
+
+                <form class="appointment-form">
+
+                    <ul class="appointment-form__fields">
+
+                        <li class="appointment-form__field">
+
+                            <label for="appointment-date">
+                                Date
+                            </label>
+
+                            <input
+                                id="appointment-date"
+                                name="appointment-date"
+                                type="date">
+
+                        </li>
+
+                        <li class="appointment-form__field">
+
+                            <label for="appointment-time">
+                                Time
+                            </label>
+
+                            <input
+                                id="appointment-time"
+                                name="appointment-time"
+                                type="time">
+
+                        </li>
+
+                    </ul>
+
+                    <div class="appointment-form__actions">
+
+                        <button
+                            type="submit"
+                            class="btn">
+
+                            Book now
+
+                        </button>
+
+                    </div>
+
+                </form>
+
+            </div>
+
+        </div>
+
+    </template>
+
+    <!-- ===================== -->
+    <!-- Appointment Options -->
+    <!-- ===================== -->
+
+    <template id="appointment-options-template">
+
+        <div class="modal">
+
+            <header class="modal__header">
+
+                <h2 class="modal__title">
+                    Appointment Options
+                </h2>
+
+                <button
+                    type="button"
+                    class="btn modal__close">
+
+                    <img
+                        class="icon"
+                        src="/src/assets/icons/close.svg"
+                        alt="Close modal">
+
+                </button>
+
+            </header>
+
+            <div class="modal__body">
+
+                <button type="button" class="btn">
+
+                    <img
+                        class="icon"
+                        src="/src/assets/icons/edit_calendar.svg"
+                        alt="">
+
+                    Modify
+
+                </button>
+
+                <button type="button" class="btn">
+
+                    <img
+                        class="icon"
+                        src="/src/assets/icons/event_cancel.svg"
+                        alt="">
+
+                    Cancel
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </template>
+
+    <!-- ===================== -->
+    <!-- Confirmation -->
+    <!-- ===================== -->
+
+    <template id="appointment-confirmation-template">
+
+        <div class="modal">
+
+            <header class="modal__header">
+
+                <h2 class="modal__title">
+                    Cancel Appointment
+                </h2>
+
+                <button
+                    type="button"
+                    class="btn modal__close">
+
+                    <img
+                        class="icon"
+                        src="/src/assets/icons/close.svg"
+                        alt="Close modal">
+
+                </button>
+
+            </header>
+
+            <div class="modal__body">
+
+                <p class="modal__message">
+                    Are you sure you want to cancel your appointment?
+                </p>
+
+            </div>
+
+            <footer class="modal__footer">
+
+                <button
+                    type="button"
+                    class="btn">
+
+                    Cancel appointment
+
+                </button>
+
+                <button
+                    type="button"
+                    class="btn">
+
+                    Keep appointment
+
+                </button>
+
+            </footer>
+
+        </div>
+
+    </template>
+
+    <!-- ===================== -->
+    <!-- Toast -->
+    <!-- ===================== -->
+
+    <template id="toast-template">
+
+        <div class="toast">
+
+            <div class="toast__header">
+
+                <h2 class="toast__title"></h2>
+
+            </div>
+
+            <div class="toast__body">
+
+                <p class="toast__message"></p>
+
+            </div>
+
+        </div>
+
+    </template>
+
+</body>
+</html>
